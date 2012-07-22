@@ -27,7 +27,6 @@ export PS1="\w$ "
 
 # ls
 
-alias ls="ls --color=auto"
 alias la="ls -a"
 alias ll="ls -l"
 alias lal="ls -al"
@@ -119,12 +118,18 @@ if [[ `uname -s` == "Darwin" ]]
     OS="lin"
 fi
 
-case "$OS" in
-  mac)
-      alias rrsch="brew search"
-      alias rrins="sudo brew install"
-  ;;
-  lin)
+if [[ "$OS" == "mac" ]]; then
+
+    alias ls="ls -G"
+
+    alias rrsch="brew search"
+    alias rrins="sudo brew install"
+fi
+
+if [[ "$OS" == "lin" ]]; then
+
+    alias ls="ls --color=auto"
+
     if [ -e /etc/lsb-release ]
     then
       . /etc/lsb-release
@@ -147,6 +152,5 @@ case "$OS" in
           alias pkgins="rpm -ivh"
         ;;
     esac
-  ;;
-esac
+fi
 
