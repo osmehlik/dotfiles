@@ -1,10 +1,6 @@
 
-# dotfiles
-
-- .bashrc
-- .vimrc
-
-## License
+License
+=======
 
 Everything inside this directory is licensed under a very permissive 2-clause BSD license.
 Full text of license:
