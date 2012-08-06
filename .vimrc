@@ -64,3 +64,10 @@ if has("gui_running")
     "set guifont=Ubuntu\ Mono:h15.00
 endif
 
+" Highlight trailing whitespaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+au ColorScheme * highlight ExtraWhitespace guibg=red
+au BufEnter * match ExtraWhitespace /\s\+$/
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhiteSpace /\s\+$/
+
