@@ -208,7 +208,7 @@ COLOR1="${COLOR_LIGHT_PURPLE}"
 COLOR2="${COLOR_LIGHT_RED}"
 
 function get_git_branch() {
-    OUTPUT=`git branch --no-color 2>/dev/null`
+    OUTPUT=`git branch --no-color 2>/dev/null | grep --color=never '* '`
     [ $? -eq 0 ] && echo ${OUTPUT:2}
 }
 
