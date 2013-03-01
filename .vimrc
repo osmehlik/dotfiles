@@ -47,15 +47,21 @@ set incsearch
 " Highlight search results
 set hlsearch
 
-" F9 runs make
-map <F9> :make<CR>
-imap <F9> :make<CR>
-" F8 jumps to the next error
-map <F8> :cnext<CR>
-imap <F8> :cnext<CR>
+" F5 jumps to the previous tab
+map <F5> :tabp<CR>
+imap <F5> :tabp<CR>
+" F6 jumps to the next tab
+map <F6> :tabn<CR>
+imap <F6> :tabn<CR>
 " F7 jumps to the previous error
 map <F7> :cprevious<CR>
 imap <F7> :cprevious<CR>
+" F8 jumps to the next error
+map <F8> :cnext<CR>
+imap <F8> :cnext<CR>
+" F9 runs make
+map <F9> :make<CR>
+imap <F9> :make<CR>
 
 if has("gui_running")
     set guifont=Envy\ Code\ B\ 10pt:h13.00
