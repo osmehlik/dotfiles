@@ -220,3 +220,9 @@ function git_branch_part() {
 PS1="${COLOR1}<${COLOR2}\u@\h${COLOR1}>\$(git_branch_part)\n\w\$ ${COLOR_RESET}"
 PS2="${COLOR1}$> ${COLOR_RESET}"
 
+############################
+# Additional customization #
+############################
+
+[ -e ~/.bashrc-addons ] && . ~/.bashrc-addons
+
