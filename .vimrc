@@ -34,9 +34,8 @@ set showmatch
 " Create files backup.
 set backup
 
-" If directory ~/.vim/backup exists, save backups into it,
-" otherwise save backups into current directory.
-set backupdir=~/.vim/backup,.
+" If directory ~/.vim/backup exists, save backups into it.
+set backupdir=~/.vim/backup
 
 " Show question what to do instead of error
 " when trying to quit and file is not saved.
