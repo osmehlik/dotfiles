@@ -74,6 +74,8 @@ alias fg5="fg %5"
 
 alias moer="more"
 alias mroe="more"
+alias maek="make"
+alias mkae="make"
 
 # Safe program usage - confirm copying, moving, removing, linking...
 
