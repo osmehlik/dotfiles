@@ -226,6 +226,20 @@ function git_branch_part() {
 PS1="${COLOR1}<${COLOR2}\u@\h${COLOR1}>\$(git_branch_part)\n\w\$ ${COLOR_RESET}"
 PS2="${COLOR1}$> ${COLOR_RESET}"
 
+#############
+# Functions #
+#############
+
+function init-git-config () {
+    echo -n "Name? "
+    read NAME
+    echo -n "E-mail? "
+    read EMAIL
+    git config --global user.name "${NAME}"
+    git config --global user.email "${EMAIL}"
+    git config color.ui true
+}
+
 ############################
 # Additional customization #
 ############################
