@@ -99,7 +99,6 @@ alias del="rm"
 # Misc
 
 alias grep="grep --color=auto"
-alias wget="wget -c"
 alias mkdir="mkdir -p"
 alias df="df -h"
 alias du="du -sh"
@@ -123,8 +122,10 @@ fi
 
 if [[ "$OS" == "mac" ]]; then
 
-    alias lock="open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
     alias ls="ls -G"
+    # Mac OS X does not have wget after install so we emulate wget using curl.
+    alias wget="curl -O -C -"
+    alias lock="open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
 
     alias rrsch="brew search"
     alias rrins="sudo brew install"
@@ -133,6 +134,7 @@ fi
 if [[ "$OS" == "lin" ]]; then
 
     alias ls="ls --color=auto"
+    alias wget="wget -c"
 
     if [ -e /etc/lsb-release ]
     then
