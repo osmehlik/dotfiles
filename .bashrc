@@ -123,6 +123,7 @@ fi
 
 if [[ "$OS" == "mac" ]]; then
 
+    alias lock="open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
     alias ls="ls -G"
 
     alias rrsch="brew search"
