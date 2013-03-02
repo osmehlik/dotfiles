@@ -1,8 +1,36 @@
 #!/bin/bash
 
-FILES=".bashrc .bash_profile .vimrc"
+FILES=".bashrc .bash_profile .vimrc .vim"
+VIM_COLOR_SCHEMES_URL="http://vimcolorschemetest.googlecode.com/svn/colors"
+VIM_COLOR_SCHEME="dante"
+
+function download_to () {
+    WGET="`which wget`"
+    if [ $? -eq 0 ]; then
+        ${WGET} -O "$2" "$1" >/dev/null 2>&1
+        return $?
+    fi
+    CURL="`which curl`"
+    if [ $? -eq 0 ]; then
+        echo "using curl"
+        ${CURL} -o "$2" "$1" >/dev/null 2>&1
+        return $?
+    fi
+    return 1
+}
+
+function populate_vim_dir () {
+    mkdir -p .vim/{backup,colors}
+    download_to \
+        "${VIM_COLOR_SCHEMES_URL}/${VIM_COLOR_SCHEME}.vim" \
+        ".vim/colors/${VIM_COLOR_SCHEME}.vim"
+    if [ $? -ne 0 ]; then
+        echo "Error: Cannot download ${VIM_COLOR_SCHEME}.vim color scheme."
+    fi
+}
 
 function install () {
+    [ ! -d .vim ] && populate_vim_dir
     echo "Installing symbolic links"
     for FILE in $FILES; do
         if [ -e ~/$FILE ]; then
