@@ -99,6 +99,7 @@ alias del="rm"
 # Misc
 
 alias grep="grep --color=auto"
+alias wget="wget -c"
 alias mkdir="mkdir -p"
 alias df="df -h"
 alias du="du -sh"
