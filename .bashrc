@@ -98,7 +98,7 @@ alias del="rm"
 ######
 # Misc
 
-alias grep="grep --color=auto"
+alias grep="grep -n --color=auto"
 alias mkdir="mkdir -p"
 alias df="df -h"
 alias du="du -sh"
