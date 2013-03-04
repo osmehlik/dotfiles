@@ -63,6 +63,9 @@ imap <F8> :cnext<CR>
 " F9 runs make
 map <F9> :make<CR>
 imap <F9> :make<CR>
+" F10 in normal mode reindents file
+" with 4 spaces sized indentation
+map <F10> gg=G
 
 if has("gui_running")
     set guifont=Envy\ Code\ B\ 10pt:h13.00
