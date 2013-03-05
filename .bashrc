@@ -125,7 +125,7 @@ if [[ "$OS" == "mac" ]]; then
     alias ls="ls -G"
     # Mac OS X does not have wget after install so we emulate wget using curl.
     alias wget="curl -O -C -"
-    alias lock="open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
+    alias lock="open -a ScreenSaverEngine"
 
     alias rrsch="brew search"
     alias rrins="sudo brew install"
