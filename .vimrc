@@ -86,3 +86,6 @@ au InsertLeave * match ExtraWhiteSpace /\s\+$/
 " Enables easy installation of other plugins
 execute pathogen#infect()
 
+" Needed for working of plugins such as SnipMate
+filetype plugin on
+
