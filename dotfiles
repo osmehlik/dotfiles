@@ -2,6 +2,7 @@
 
 FILES=".bashrc .bash_profile .vimrc .vim"
 PATHOGEN_URL="https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim"
+NERDTREE_URL="https://github.com/scrooloose/nerdtree.git"
 VIM_COLOR_SCHEMES_URL="http://vimcolorschemetest.googlecode.com/svn/colors"
 VIM_COLOR_SCHEME="dante"
 
@@ -26,6 +27,7 @@ function populate_vim_dir () {
         "${VIM_COLOR_SCHEMES_URL}/${VIM_COLOR_SCHEME}.vim" \
         ".vim/colors/${VIM_COLOR_SCHEME}.vim"
     download_to "${PATHOGEN_URL}" ".vim/autoload/pathogen.vim"
+    (cd .vim/bundle && git clone "${NERDTREE_URL}" >/dev/null 2>&1)
 
     if [ $? -ne 0 ]; then
         echo "Error: Cannot download ${VIM_COLOR_SCHEME}.vim color scheme."
