@@ -126,6 +126,7 @@ if [[ "$OS" == "mac" ]]; then
     # Mac OS X does not have wget after install so we emulate wget using curl.
     alias wget="curl -O -C -"
     alias lock="open -a ScreenSaverEngine"
+    alias mvim="open -a MacVim"
 
     alias rrsch="brew search"
     alias rrins="sudo brew install"
