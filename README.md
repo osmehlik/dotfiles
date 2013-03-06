@@ -11,6 +11,12 @@
 
 ## Usage
 
+### Requirements
+
+- exuberant ctags
+   - Mac OS X contains a different ctags version, you can install exuberant ctags using [Homebrew](http://mxcl.github.com/homebrew/):
+     `sudo brew install ctags`
+
 ### Installation
 
   1. `git clone https://github.com/osmehlik/dotfiles.git`

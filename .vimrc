@@ -48,8 +48,10 @@ set incsearch
 " Highlight search results
 set hlsearch
 
-" F4 toggles directory browser on/off
-map <F4> :NERDTreeToggle<CR>
+" F3 toggles directory browser on/off
+map <F3> :NERDTreeToggle<CR>
+" F4 toggles tag browser on/off
+map <F4> :TagbarToggle<CR>
 " F5 jumps to the previous tab
 map <F5> :tabp<CR>
 imap <F5> :tabp<CR>
