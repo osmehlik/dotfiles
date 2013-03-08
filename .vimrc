@@ -70,6 +70,8 @@ imap <F9> :make<CR>
 " F10 in normal mode reindents file
 " with 4 spaces sized indentation
 map <F10> gg=G
+" CTRL+P runs fuzzy file opening
+map <C-P> :CtrlP<CR>
 
 if has("gui_running")
     set guifont=Envy\ Code\ B\ 10pt:h13.00
