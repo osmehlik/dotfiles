@@ -2,13 +2,11 @@
 
 FILES=".bashrc .bash_profile .vimrc .vim"
 PATHOGEN_URL="https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim"
-NERDTREE_URL="https://github.com/scrooloose/nerdtree.git"
-SNIPMATE_URL="https://github.com/msanders/snipmate.vim.git"
-TAGBAR_URL="https://github.com/majutsushi/tagbar.git"
 VIM_COLOR_SCHEMES_URL="http://vimcolorschemetest.googlecode.com/svn/colors"
 VIM_COLOR_SCHEME="dante"
 
 function download_to () {
+    echo "Downloading $1 -> $2"
     WGET="`which wget`"
     if [ $? -eq 0 ]; then
         ${WGET} -O "$2" "$1" >/dev/null 2>&1
@@ -16,30 +14,42 @@ function download_to () {
     fi
     CURL="`which curl`"
     if [ $? -eq 0 ]; then
-        echo "using curl"
         ${CURL} -o "$2" "$1" >/dev/null 2>&1
         return $?
     fi
     return 1
 }
 
-function populate_vim_dir () {
-    mkdir -p .vim/{backup,colors,autoload,bundle}
-    download_to \
-        "${VIM_COLOR_SCHEMES_URL}/${VIM_COLOR_SCHEME}.vim" \
-        ".vim/colors/${VIM_COLOR_SCHEME}.vim"
-    download_to "${PATHOGEN_URL}" ".vim/autoload/pathogen.vim"
-    (cd .vim/bundle && git clone "${NERDTREE_URL}" >/dev/null 2>&1)
-    (cd .vim/bundle && git clone "${SNIPMATE_URL}" >/dev/null 2>&1)
-    (cd .vim/bundle && git clone "${TAGBAR_URL}" >/dev/null 2>&1)
-
-    if [ $? -ne 0 ]; then
-        echo "Error: Cannot download ${VIM_COLOR_SCHEME}.vim color scheme."
-    fi
-}
-
 function install () {
-    [ ! -d .vim ] && populate_vim_dir
+    mkdir -p .vim/{backup,colors,autoload}
+
+    echo "Installing plugins"
+
+    # install pathogen
+
+    PATHOGEN_LOCAL_PATH=".vim/autoload/pathogen.vim"
+    if [ -e "${PATHOGEN_LOCAL_PATH}" ]; then
+        echo "Pathogen plugin already installed, skipping..."
+    else
+        download_to "${PATHOGEN_URL}" "${PATHOGEN_LOCAL_PATH}"
+    fi
+
+    # install other plugins
+    git submodule init
+    git submodule update
+
+    # install color schemes
+
+    echo "Installing color schemes"
+    COLOR_SCHEME_LOCAL_PATH=".vim/colors/${VIM_COLOR_SCHEME}.vim"
+    if [ -e "${COLOR_SCHEME_LOCAL_PATH}" ]; then
+        echo "Color scheme already installed, skipping..."
+    else
+        download_to \
+        "${VIM_COLOR_SCHEMES_URL}/${VIM_COLOR_SCHEME}.vim" \
+        "${COLOR_SCHEME_LOCAL_PATH}"
+    fi
+
     echo "Installing symbolic links"
     for FILE in $FILES; do
         if [ -e ~/$FILE ]; then
