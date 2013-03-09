@@ -15,8 +15,11 @@ export PAGER="less"
 export EDITOR="vim"
 export VISUAL="vim"
 export HISTCONTROL="ignoredups"
+export HISTFILESIZE="5000"
 export IGNOREEOF="2" # Bash can be quit by pressing Control + D three times.
 export PS1="\w$ "
+
+shopt -s histappend
 
 ##########################
 # Enable bash completion #
