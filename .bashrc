@@ -67,6 +67,22 @@ alias fg3="fg %3"
 alias fg4="fg %4"
 alias fg5="fg %5"
 
+# git
+
+alias g="git"
+alias ga="git add"
+alias gap="git add -p"
+alias gb="git branch"
+alias gba="git branch -a"
+alias gc="git commit"
+alias gd="git diff"
+alias gf="git fetch"
+alias gl="git pull"
+alias gm="git merge"
+alias gp="git push"
+alias gr="git remote"
+alias gs="git status"
+
 ##################
 # Thematic comands
 
