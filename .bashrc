@@ -18,6 +18,17 @@ export HISTCONTROL="ignoredups"
 export IGNOREEOF="2" # Bash can be quit by pressing Control + D three times.
 export PS1="\w$ "
 
+##########################
+# Enable bash completion #
+##########################
+
+for BASH_COMPLETION_PATH \
+in  /etc/bash_completion /usr/local/etc/bash_completion
+do  if [ -f "${BASH_COMPLETION_PATH}" ]; then
+        . "${BASH_COMPLETION_PATH}"
+    fi
+done
+
 ###########
 # Aliases #
 ###########

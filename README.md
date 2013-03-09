@@ -13,6 +13,8 @@
 
 ### Requirements
 
+- bash completion
+   - On Mac OS X with Homebrew: `sudo brew install bash-completion`
 - exuberant ctags
    - Mac OS X contains a different ctags version, you can install exuberant ctags using [Homebrew](http://mxcl.github.com/homebrew/):
      `sudo brew install ctags`
