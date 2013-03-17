@@ -1,38 +1,12 @@
 #!/bin/bash
 
 FILES=".bashrc .bash_profile .vimrc .vim"
-PATHOGEN_URL="https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim"
-
-function download_to () {
-    echo "Downloading $1 -> $2"
-    WGET="`which wget`"
-    if [ $? -eq 0 ]; then
-        ${WGET} -O "$2" "$1" >/dev/null 2>&1
-        return $?
-    fi
-    CURL="`which curl`"
-    if [ $? -eq 0 ]; then
-        ${CURL} -o "$2" "$1" >/dev/null 2>&1
-        return $?
-    fi
-    return 1
-}
 
 function install () {
-    mkdir -p .vim/{backup,colors,autoload}
+    mkdir -p .vim/backup
 
     echo "Installing plugins"
 
-    # install pathogen
-
-    PATHOGEN_LOCAL_PATH=".vim/autoload/pathogen.vim"
-    if [ -e "${PATHOGEN_LOCAL_PATH}" ]; then
-        echo "Pathogen plugin already installed, skipping..."
-    else
-        download_to "${PATHOGEN_URL}" "${PATHOGEN_LOCAL_PATH}"
-    fi
-
-    # install other plugins
     git submodule init
     git submodule update
 
