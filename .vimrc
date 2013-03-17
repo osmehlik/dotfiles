@@ -75,13 +75,6 @@ map <F10> gg=G
 " CTRL+P runs fuzzy file opening
 map <C-P> :CtrlP<CR>
 
-if has("gui_running")
-    set guifont=Envy\ Code\ B\ 10pt:h13.00
-    "set guifont=PragmataPro:h14.00
-    "set guifont=Andale\ Mono:h13.00
-    "set guifont=Ubuntu\ Mono:h15.00
-endif
-
 " Highlight trailing whitespaces
 highlight ExtraWhitespace ctermbg=red guibg=red
 au ColorScheme * highlight ExtraWhitespace guibg=red
