@@ -16,3 +16,6 @@
 [submodule ".vim/pathogen"]
 	path = .vim/pathogen
 	url = https://github.com/tpope/vim-pathogen.git
+[submodule ".vim/bundle/alternate"]
+	path = .vim/bundle/alternate
+	url = https://github.com/vim-scripts/a.vim.git
