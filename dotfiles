@@ -2,8 +2,6 @@
 
 FILES=".bashrc .bash_profile .vimrc .vim"
 PATHOGEN_URL="https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim"
-VIM_COLOR_SCHEMES_URL="http://vimcolorschemetest.googlecode.com/svn/colors"
-VIM_COLOR_SCHEME="dante"
 
 function download_to () {
     echo "Downloading $1 -> $2"
@@ -37,18 +35,6 @@ function install () {
     # install other plugins
     git submodule init
     git submodule update
-
-    # install color schemes
-
-    echo "Installing color schemes"
-    COLOR_SCHEME_LOCAL_PATH=".vim/colors/${VIM_COLOR_SCHEME}.vim"
-    if [ -e "${COLOR_SCHEME_LOCAL_PATH}" ]; then
-        echo "Color scheme already installed, skipping..."
-    else
-        download_to \
-        "${VIM_COLOR_SCHEMES_URL}/${VIM_COLOR_SCHEME}.vim" \
-        "${COLOR_SCHEME_LOCAL_PATH}"
-    fi
 
     echo "Installing symbolic links"
     for FILE in $FILES; do

@@ -6,6 +6,8 @@
 " Oldrich Smehlik, <oldrich@smehlik.net>
 "
 
+" Enables easy installation of other plugins
+execute pathogen#infect()
 " No old-fashioned vi mode.
 set nocompatible
 " Enable syntax highlighting
@@ -86,9 +88,6 @@ au ColorScheme * highlight ExtraWhitespace guibg=red
 au BufEnter * match ExtraWhitespace /\s\+$/
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhiteSpace /\s\+$/
-
-" Enables easy installation of other plugins
-execute pathogen#infect()
 
 " Needed for working of plugins such as SnipMate
 filetype plugin on
