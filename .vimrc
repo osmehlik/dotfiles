@@ -50,6 +50,12 @@ set incsearch
 " Highlight search results
 set hlsearch
 
+" Enables mouse in vim in terminal
+" (for scrolling, resizing windows, etc.),
+" if terminal emulator supports it.
+" On OS X it seems to work in iTerm, and not work in Terminal.
+set mouse=a
+
 " F3 toggles directory browser on/off
 map <F3> :NERDTreeToggle<CR>
 " F4 toggles tag browser on/off
