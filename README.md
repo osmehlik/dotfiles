@@ -1,4 +1,3 @@
-
 # dotfiles
 
 ## What is it
@@ -8,6 +7,11 @@
 - Dotfiles can be usually found in home folder on Unix-like operating systems such as GNU/Linux or Mac OS X.
 - Dotfiles holds configuration of user applications such as shells or editors.
 - So here is my configuration of these things.
+
+## Features
+
+- Colored & git aware (shows current branch) prompt.
+- Vim extended with useful plugins (directory browser, tag browser, etc).
 
 ## Usage
 
@@ -45,3 +49,6 @@ This Vim configuration uses the following shortcuts:
   - F10 - Reindent file.
   - Ctrl + P - Fuzzy file opening.
 
+### Customization
+
+  - **bash** - Put your additional configuration to .bashrc-addons file in your home directory (it will be loaded next time you start bash.
