@@ -51,4 +51,4 @@ This Vim configuration uses the following shortcuts:
 
 ### Customization
 
-  - **bash** - Put your additional configuration to .bashrc-addons file in your home directory (it will be loaded next time you start bash.
+  - **bash** - Put your additional configuration to .bashrc-addons file in your home directory (it will be loaded next time you start bash).
