@@ -31,3 +31,17 @@
   2. `cd ..`
   3. `rm -rf dotfiles`
 
+### Controls
+
+This Vim configuration uses the following shortcuts:
+
+  - F3 - Show/hide directory browser.
+  - F4 - Show/hide symbols browser.
+  - F5 - Previous tab.
+  - F6 - Next tab.
+  - F7 - Previous error.
+  - F8 - Next error.
+  - F9 - Make.
+  - F10 - Reindent file.
+  - Ctrl + P - Fuzzy file opening.
+
