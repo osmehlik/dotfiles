@@ -91,3 +91,6 @@ au InsertLeave * match ExtraWhiteSpace /\s\+$/
 " Needed for working of plugins such as SnipMate
 filetype plugin on
 
+if has("gui_macvim")
+    set guifont=Monaco:h13.00
+endif
