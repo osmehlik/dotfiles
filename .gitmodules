@@ -19,3 +19,6 @@
 [submodule ".vim/bundle/alternate"]
 	path = .vim/bundle/alternate
 	url = https://github.com/vim-scripts/a.vim.git
+[submodule ".vim/bundle/markdown"]
+	path = .vim/bundle/markdown
+	url = https://github.com/hallison/vim-markdown.git
