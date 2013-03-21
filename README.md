@@ -19,11 +19,14 @@
 
 - bash completion (required for enhanced bash completion after pressing Tab)
 - exuberant ctags (required for tagbar plugin functionality)
+- clang (required for clang code completion)
 - ack (required for ack plugin functionality)
 
 How to install requirements:
 
-- On Mac OS X with [Homebrew](http://mxcl.github.com/homebrew/): `sudo brew install bash-completion ctags ack`
+- On Mac OS X with [Homebrew](http://mxcl.github.com/homebrew/):
+    1. `sudo brew install bash-completion ctags ack`
+    2. You can obtain clang by installing Xcode.
 
 ### Installation
 
