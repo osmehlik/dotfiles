@@ -20,6 +20,12 @@ function install () {
     done
 }
 
+function update() {
+    git pull
+    git submodule init
+    git submodule update
+}
+
 function uninstall () {
     echo "Uninstalling symbolic links"
     for FILE in $FILES; do
@@ -37,12 +43,14 @@ function help() {
     echo ""
     echo "Actions:"
     echo "   install"
+    echo "   update"
     echo "   uninstall"
 }
 
 function main() {
     case "$1" in
         install) install ;;
+        update) update ;;
         uninstall) uninstall ;;
         *) help ;;
     esac
