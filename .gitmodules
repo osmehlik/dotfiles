@@ -25,3 +25,6 @@
 [submodule ".vim/bundle/ack"]
 	path = .vim/bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
+[submodule ".vim/bundle/clangcomplete"]
+	path = .vim/bundle/clangcomplete
+	url = https://github.com/Rip-Rip/clang_complete.git
