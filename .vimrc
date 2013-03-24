@@ -30,6 +30,9 @@ set smartindent
 
 set textwidth=78
 
+" Increase history size.
+set history=100
+
 " Show matching open/close brackets.
 set showmatch
 
