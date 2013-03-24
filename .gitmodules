@@ -28,3 +28,6 @@
 [submodule ".vim/bundle/clangcomplete"]
 	path = .vim/bundle/clangcomplete
 	url = https://github.com/Rip-Rip/clang_complete.git
+[submodule ".vim/bundle/nerdcommenter"]
+	path = .vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
