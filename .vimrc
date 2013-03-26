@@ -53,6 +53,9 @@ set incsearch
 " Highlight search results
 set hlsearch
 
+" Automatically reloads open file, if it is changed on the disk.
+set autoread
+
 " Enables mouse in vim in terminal
 " (for scrolling, resizing windows, etc.),
 " if terminal emulator supports it.
