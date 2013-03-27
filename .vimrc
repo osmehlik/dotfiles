@@ -100,3 +100,11 @@ filetype plugin on
 if has("gui_macvim")
     set guifont=Monaco:h13.00
 endif
+
+set completeopt=menu,menuone
+
+" clang complete plugin configuration
+let g:clang_use_library = 1
+let g:clang_snippets = 1
+let g:clang_snippets_engine = 'ultisnips'
+
