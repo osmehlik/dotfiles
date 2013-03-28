@@ -108,3 +108,10 @@ let g:clang_use_library = 1
 let g:clang_snippets = 1
 let g:clang_snippets_engine = 'ultisnips'
 
+" custom View menu
+:30menu View.Show/Hide\ Directory\ Browser :NERDTreeToggle<CR>
+:menu View.Show/Hide\ Tag\ Browser :TagbarToggle<CR>
+:menu View.Show/Hide\ History\ Browser  :GundoToggle<CR>
+:menu View.--Separator-- :
+:menu View.Show/Hide\ Line\ Numbers :set number!<CR>
+:menu View.Show/Hide\ Paste :set paste!<CR>
