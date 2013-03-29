@@ -11,13 +11,25 @@
 # General #
 ###########
 
+########
+# Locale
+
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+###################
+# Editors / viewers
+
 export PAGER="less"
 export EDITOR="vim"
 export VISUAL="vim"
+
+#########
+# History
+
 export HISTCONTROL="ignoredups"
 export HISTFILESIZE="5000"
 export IGNOREEOF="2" # Bash can be quit by pressing Control + D three times.
-export PS1="\w$ "
 
 shopt -s histappend
 
