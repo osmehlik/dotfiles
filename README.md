@@ -32,11 +32,11 @@ How to install requirements:
 
   1. `git clone https://github.com/osmehlik/dotfiles.git`
   2. `cd dotfiles`
-  3. `./dotfiles.sh install`
+  3. `./dotfiles install`
 
 ### Uninstallation
 
-  1. `./dotfiles.sh uninstall`
+  1. `./dotfiles uninstall`
   2. `cd ..`
   3. `rm -rf dotfiles`
 
