@@ -273,7 +273,16 @@ function git_branch_part() {
     [ ${#BRANCH} -gt 0 ] && echo -en "--<${COLOR2}${BRANCH}${COLOR1}>"
 }
 
-PS1="${COLOR1}<${COLOR2}\u@\h${COLOR1}>\$(git_branch_part)\n\w\$ ${COLOR_RESET}"
+# Echoes correct hostname on Mac OS X and usual \h on other platforms.
+function get_hostname() {
+    if [[ $OS == "mac" ]]; then
+        echo -n "$(scutil --get ComputerName)"
+    else
+        echo -n "\h"
+    fi
+}
+
+PS1="${COLOR1}<${COLOR2}\u@\$(get_hostname)${COLOR1}>\$(git_branch_part)\n\w\$ ${COLOR_RESET}"
 PS2="${COLOR1}$> ${COLOR_RESET}"
 
 #############
