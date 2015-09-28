@@ -301,6 +301,15 @@ function init-git-config () {
     git config color.ui true
 }
 
+function init-mac-config () {
+    # Computer name
+    echo -n "Computer name? "
+    read COMPUTER_NAME
+    sudo scutil --set ComputerName "${COMPUTER_NAME}"
+    sudo scutil --set HostName "${COMPUTER_NAME}"
+    sudo scutil --set LocalHostName "${COMPUTER_NAME}"
+}
+
 ############################
 # Additional customization #
 ############################
