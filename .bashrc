@@ -311,6 +311,8 @@ function init-mac-config () {
     sudo scutil --set ComputerName "${COMPUTER_NAME}"
     sudo scutil --set HostName "${COMPUTER_NAME}"
     sudo scutil --set LocalHostName "${COMPUTER_NAME}"
+    # Disable creating *.DS_Store files on network volumes
+    defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 }
 
 ############################
