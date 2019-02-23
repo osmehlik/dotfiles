@@ -122,8 +122,18 @@ alias gs="git status"
 
 # docker
 alias d="docker"
-alias di="docker image"
 alias dc="docker container"
+alias dh="docker history"
+alias di="docker image"
+alias dr="docker run"
+alias dv="docker volume"
+
+# removes all containers
+function dcrmall() {
+    for container in `docker container list --all --quiet`; do
+        docker container rm $container
+    done
+}
 
 # make
 alias mk="make"
