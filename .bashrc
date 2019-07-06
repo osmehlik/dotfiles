@@ -223,6 +223,19 @@ if [[ "$OS" == "lin" ]]; then
           alias rrrm="sudo apt-get remove"
           alias pkgins="sudo dpkg -i"
           alias pkgrm="sudo dpkg -r"
+
+          function up() {
+              # download list of available deb packages
+              sudo apt update
+              # upgrade deb packages to latest versions
+              sudo apt upgrade
+              # removes obsolete packages
+              # can interactively ask do you want to continue?
+              sudo apt autoremove
+              # upgrades snap packages
+              sudo snap refresh
+          }
+
         ;;
       openSUSE)
           alias rrsch="zypper search"
