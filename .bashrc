@@ -313,7 +313,7 @@ function get_hostname() {
     if [[ $OS == "mac" ]]; then
         echo -n "$(scutil --get ComputerName)"
     else
-        echo -n "\h"
+        uname -n
     fi
 }
 
