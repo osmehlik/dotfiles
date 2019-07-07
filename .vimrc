@@ -36,11 +36,8 @@ set history=100
 " Show matching open/close brackets.
 set showmatch
 
-" Create files backup.
-set backup
-
-" If directory ~/.vim/backup exists, save backups into it.
-set backupdir=~/.vim/backup
+" Do not create files backup.
+set nobackup
 
 " Show question what to do instead of error
 " when trying to quit and file is not saved.
