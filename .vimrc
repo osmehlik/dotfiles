@@ -96,6 +96,8 @@ filetype plugin on
 
 if has("gui_macvim")
     set guifont=Monaco:h13.00
+elseif has("gui_gtk3")
+    set guifont=Ubuntu\ Mono\ 12
 endif
 
 set completeopt=menu,menuone
