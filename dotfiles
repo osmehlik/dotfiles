@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILES=".bashrc .bash_profile .vimrc .vim"
+FILES=".bashrc .bash_profile .commonrc .vimrc .vim"
 
 function install () {
     mkdir -p .vim/backup
