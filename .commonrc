@@ -329,10 +329,3 @@ function init-mac-config () {
     defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 }
 
-############################
-# Additional customization #
-############################
-
-[ -e ~/.bashrc-addons ] && . ~/.bashrc-addons
-
-

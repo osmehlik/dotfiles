@@ -25,9 +25,16 @@ do  if [ -f "${BASH_COMPLETION_PATH}" ]; then
     fi
 done
 
-################
-# Colored prompt
+##################
+# Colored prompt #
+##################
 
 PS1="${COLOR1}<${COLOR2}\u@\$(get_hostname)${COLOR1}>\$(git_branch_part)\n\w\$ ${COLOR_RESET}"
 PS2="${COLOR1}$> ${COLOR_RESET}"
+
+############################
+# Additional customization #
+############################
+
+[ -e ~/.bashrc-addons ] && . ~/.bashrc-addons
 
