@@ -153,6 +153,13 @@ alias move="mv"
 alias ren="mv"
 alias del="rm"
 
+# Python
+
+alias venv-install="sudo pip3 install virtualenv"
+alias venv-new="python3 -m venv env"
+alias venv-activate="source env/bin/activate"
+alias venv-deactivate="deactivate"
+
 ######
 # Misc
 
